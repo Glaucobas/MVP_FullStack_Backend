@@ -1,0 +1,50 @@
+CREATE TABLE Lançamentos 
+( 
+ Tipo Lançamento INT PRIMARY KEY,  
+ Categoria INT PRIMARY KEY,  
+); 
+
+CREATE TABLE Banco 
+( 
+ DescricaoBanco INT,  
+ IdBanco INT PRIMARY KEY,  
+); 
+
+CREATE TABLE Transações 
+( 
+ Data INT PRIMARY KEY,  
+ Lançamento INT PRIMARY KEY,  
+ Valor INT,  
+ Categoria INT PRIMARY KEY,  
+ idConta INT PRIMARY KEY,  
+ idLançamentos INT NOT NULL,  
+); 
+
+CREATE TABLE Agência 
+( 
+ DescricaoAgencia INT,  
+ IdAgencia INT PRIMARY KEY,  
+ idBanco INT,  
+); 
+
+CREATE TABLE Conta 
+( 
+ IdConta INT PRIMARY KEY,  
+ idAgência INT PRIMARY KEY,  
+ idTipoConta INT PRIMARY KEY,  
+); 
+
+CREATE TABLE TipoConta 
+( 
+ IdPoupanca INT PRIMARY KEY,  
+ Descricao_Poupanca INT,  
+ Ativo INT NOT NULL,  
+ Digito INT,  
+); 
+
+ALTER TABLE Transações ADD FOREIGN KEY(Categoria) REFERENCES undefined (Categoria)
+ALTER TABLE Transações ADD FOREIGN KEY(idConta) REFERENCES Lançamentos (idConta)
+ALTER TABLE Transações ADD FOREIGN KEY(idLançamentos) REFERENCES Lançamentos (idLançamentos)
+ALTER TABLE Agência ADD FOREIGN KEY(idBanco) REFERENCES Banco (idBanco)
+ALTER TABLE Conta ADD FOREIGN KEY(idAgência) REFERENCES Lançamentos (idAgência)
+ALTER TABLE Conta ADD FOREIGN KEY(idTipoConta) REFERENCES Lançamentos (idTipoConta)
