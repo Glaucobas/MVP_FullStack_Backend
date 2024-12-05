@@ -18,7 +18,7 @@ env\Scripts\activate
 ```
 para ativar o ambiente.
 
-en seguida o comando:
+em seguida o comando:
 
 ```
 (env)$ pip install -r requirements.txt
