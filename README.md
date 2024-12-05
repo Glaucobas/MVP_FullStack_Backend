@@ -1,6 +1,6 @@
 # API
 
-O objetida da API é servir como uma camada de controle entre o frontend e a base de dados, servindo como base para pesquisas e manipulação de dados.
+O objetida da API é servir como uma camada de controle entre o frontend e a base de dados.
 
 ---
 ## Como executar 
