@@ -4,3 +4,4 @@ flask_cors
 sqlalchemy
 sqlalchemy_utils
 flask-openapi3-swagger
+logging
